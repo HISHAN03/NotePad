@@ -35,25 +35,26 @@ const RetrieveCard = () => {
 
 
   return (
-    <div className="border p-6 mb-6">
+    <div className="p-8 m-10 rounded-lg mockup-code glass">
       <h2 className="text-lg font-bold mb-4">Retrieve Card</h2>
+      <textarea
+        className="textarea  mb-5" type="text"
+        
+      
+        style={{ width: "100%", height:"200px" }}
+        value={bigInput}
+        readOnly
+      ></textarea>
       <div className="flex mb-4">
       <input
           type="text"
           placeholder="Small Input"
-          className="border p-3 mr-2 text-black"
+          className="input w-full max-w-xs"
           value={smallInput}
           onChange={(e) => setSmallInput(e.target.value)}
         />
-        <button className="bg-green-500 text-white p-3 rounded" onClick={handleClick}>Retrieve</button>
+        <button className="btn btn-neutral ml-3" onClick={handleClick}>Retrieve</button>
       </div>
-      <input
-        type="text"
-        placeholder="Bigger Input"
-        className="border p-3 w-full mb-4 text-black"
-        value={bigInput}
-        readOnly
-      />
     </div>
   );
 };

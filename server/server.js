@@ -9,6 +9,7 @@ app.use(express.json());
 mongoose.connect('mongodb+srv://hishan:1234@cluster0.sksy2nt.mongodb.net/?retryWrites=true&w=majority', { dbName: "notepad" }).then(() => { console.log("mongodb-connected"); });
 
 app.use(cors())
+
 app.post("/send", async (req, res) => {
   try {
     const { description } = req.body;
@@ -19,13 +20,12 @@ app.post("/send", async (req, res) => {
     });
     await newText.save();
     console.log("Data saved to the database:", newText);
-     return res.status(200).json({ success: true, id: roomNo });
+     return res.status(200).json({ success: true, id: roomNo }); 
   } catch (error) {
     console.error("Error handling request:", error);
     res.status(500).send("Internal Server Error");
   }
 });
-
 
 app.post("/retrieve", async (req, res) => {
   try {
