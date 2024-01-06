@@ -6,7 +6,7 @@ const SendCard = () => {
   const [message, setMessage] = useState("");
   const [roomNo, setRoomNo] = useState(null);
   const handleSend = () => {
-    fetch("http://localhost:4000/send", {
+    fetch("http://localhost:2000/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ const SendCard = () => {
     <div className="p-8 m-10 rounded-lg mockup-code glass">
      
       <h2 className="text-xl font-bold mb-4"> Send text</h2>
-      <textarea className="textarea  mb-5" type="text"
+      <textarea className="textarea  mb-5" 
         placeholder="Enter your message"
       
         style={{ width: "100%", height:"200px" }}

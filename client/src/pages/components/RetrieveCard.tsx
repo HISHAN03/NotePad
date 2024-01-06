@@ -8,7 +8,7 @@ const RetrieveCard = () => {
     const [message, setMessage] = useState("");
 
     const handleClick = () => {
-        fetch('http://localhost:4000/retrieve', {
+        fetch('http://localhost:2000/retrieve', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const RetrieveCard = () => {
     <div className="p-8 m-10 rounded-lg mockup-code glass">
       <h2 className="text-lg font-bold mb-4">Retrieve Card</h2>
       <textarea
-        className="textarea  mb-5" type="text"
+        className="textarea  mb-5" 
         
       
         style={{ width: "100%", height:"200px" }}

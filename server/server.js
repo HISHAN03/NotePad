@@ -3,12 +3,14 @@ const app = express();
 import mongoose from 'mongoose';
 import Text from "./db/text.js"
 import { Random4DigitNumber } from "./functions/function.js";
-const port = 4000;
+const port = process.env.PORT||4000;
 import cors from 'cors';
-app.use(express.json());
-mongoose.connect('mongodb+srv://hishan:1234@cluster0.sksy2nt.mongodb.net/?retryWrites=true&w=majority', { dbName: "notepad" }).then(() => { console.log("mongodb-connected"); });
-
 app.use(cors())
+import dotenv from "dotenv"
+dotenv.config()
+app.use(express.json());
+mongoose.connect(process.env.MONGO_URL, { dbName: "notepad" }).then(() => { console.log("mongodb-connected"); });
+
 
 app.post("/send", async (req, res) => {
   try {
