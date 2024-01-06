@@ -36,11 +36,10 @@ const SendCard = () => {
 
       <button
         className="btn btn-neutral"
-        onClick={handleSend}
-      >
+        onClick={handleSend}>
         Send
       </button>
-      {roomNo && <p className="mt-2 text-green-500">The room no is {roomNo}</p>}
+      {roomNo && <p className="mt-2 text-green-500">Your Id no is {roomNo}</p>}
     </div>
   );
 };

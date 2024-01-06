@@ -11,7 +11,8 @@ export default function Home() {
 
   < SendCard />
   < RetrieveCard />
-    <Footer/>
+    <Footer
+    />
   </>
   )
 }
