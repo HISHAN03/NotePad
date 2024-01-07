@@ -1,7 +1,7 @@
 import mongoose, { Document, Model } from 'mongoose';
 
-interface IText extends Document{
-    roomNo: number;
+interface IText extends Document {
+  roomNo: number;
   description: string;
   expiresAt: Date;
 }
@@ -17,11 +17,11 @@ const textSchema = new mongoose.Schema({
   },
   expiresAt: {
     type: Date,
-    default: () => new Date(Date.now() + 1 * 60 * 1000), 
-    index: { expires: 0 } 
+    default: () => new Date(Date.now() + 1 * 60 * 1000),
+    index: { expires: 0 }
   }
 });
 
 
 const Text: Model<IText> = mongoose.model<IText>('Text', textSchema);
-export {Text,IText};
+export { Text, IText };
