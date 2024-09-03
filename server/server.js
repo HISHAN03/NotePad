@@ -3,7 +3,7 @@ const app = express();
 import mongoose from 'mongoose';
 import Text from "./db/text.js"
 import { Random4DigitNumber } from "./functions/function.js";
-const port = process.env.PORT||4000;
+const port = process.env.PORT||2000;
 import cors from 'cors';
 app.use(cors())
 import dotenv from "dotenv"
